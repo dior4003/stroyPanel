@@ -7,7 +7,6 @@ const localStorage = require("./server/localStorage/localStotrage");
 var path = require("path"); //used for file path
 var fs = require("fs-extra");
 require("dotenv").config();
-require("zkt-fetch");
 const admin = express();
 console.log(localStorage.getItem("admin"));
 const port = 8080;

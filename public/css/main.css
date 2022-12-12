@@ -4,6 +4,13 @@
   max-width: 800px;
   margin: 0 auto 20px;
 }
+.instagramm{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #eeeeee;
+}
 
 .shaped-form {
   position: relative;

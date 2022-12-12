@@ -4,13 +4,54 @@ const localStorage = require("./localStorage/localStotrage");
 const bcrypt = require("bcrypt");
 const testFolder = "./public/images/";
 const Contact = require("./schema/contactSchema");
-const fs = require("fs");
+const fs = require("fs-extra");
 const saltRounds = 10;
+const TelegramBot = require("node-telegram-bot-api");
+
 const Insta = require("./schema/instaSchema");
 const axios = require("axios");
+const token = "5777250834:AAGaNZDkl_Z8R-B6HonPYDV6_xJvqrM5ZSQ";
 
+const bot = new TelegramBot(token, { polling: true });
 const Admin = require("./schema/adminSchema");
 exports.view = (req, res) => {
+  let cards = [
+    {
+      image:
+        "https://thumb.tildacdn.com/tild3739-3166-4833-b734-656331653566/-/cover/460x340/center/center/-/format/webp/Product_1.jpg",
+      text: "Сэндвич-панели",
+    },
+    {
+      image:
+        "https://thumb.tildacdn.com/tild3430-6461-4836-b231-316563303364/-/cover/460x340/center/center/-/format/webp/montazh_postavka_kho.jpg",
+      text: "Сэндвич-панели для холодильных камер",
+    },
+    {
+      image:
+        "https://thumb.tildacdn.com/tild3533-3630-4532-a434-623634396130/-/cover/460x340/center/center/-/format/webp/Product_4.jpg",
+      text: "Стеновые сэндвич панели",
+    },
+    {
+      image:
+        "https://thumb.tildacdn.com/tild3030-3133-4535-b133-616334353534/-/cover/460x340/center/center/-/format/webp/Product_3.jpg",
+      text: "Кровельные сэндвич панели",
+    },
+    {
+      image:
+        "https://thumb.tildacdn.com/tild6439-3739-4661-b538-316439656431/-/cover/460x340/center/center/-/format/webp/Product_2.jpg",
+      text: "Профилированный лист",
+    },
+    {
+      image:
+        "https://thumb.tildacdn.com/tild6633-3238-4765-b938-363437653166/-/cover/460x340/center/center/-/format/webp/Product_5.jpg",
+      text: "Тункабонд",
+    },
+  ];
+  Insta.find().then((post) => {
+    const posts = post[0].insta;
+    res.render("home", { posts, cards });
+    console.log(posts);
+  });
   // axios({
   //   method: "get",
   //   url: "https://v1.nocodeapi.com/stroypanel/instagram/KozEuMpXWFAYiMqF?limit=9999999",
@@ -25,7 +66,7 @@ exports.view = (req, res) => {
   //     console.log(error);
   //   });
 
-  res.render("home");
+  // res.render("home");
 };
 exports.updInsta = async (req, res) => {
   axios({
@@ -109,9 +150,6 @@ exports.login = async (req, res) => {
     });
   });
 
-  console.log(hash);
-  console.log(localStorage.getItem("admin"));
-
   // Save Note in the database
 };
 exports.notFound = async (req, res) => {
@@ -134,12 +172,25 @@ exports.dashboard = async (req, res) => {
 };
 exports.userContact = async (req, res) => {
   if (localStorage.getItem("admin")) {
-    const { name, email, message } = req.body;
+    const { name, phone, message } = req.body;
+    bot.on("message", (msg) => {
+      bot.sendMessage(msg.chat.id);
+      // console.log(msg);
+    });
+    bot.sendMessage(
+      -838756959,
+      ` #Contact 👋
+      
+  ${phone ? "📞Phone:  " + phone : "📞Phone: ☘️☘️☘️"}
+  👨‍💼(💁‍♀️)Name :  ${name ? name : "###"}
+  📖Team : ${message ? message : "###"}
+  `
+    );
 
     const note = await new Contact({
       name: name,
       massage: message,
-      email: email,
+      email: phone,
     });
 
     // Save Note in the database
@@ -162,7 +213,7 @@ exports.userContact = async (req, res) => {
 };
 
 exports.logout = async (req, res) => {
-  localStorage.removeItem("admin");
+  localStorage.clear();
 
   console.log(localStorage.getItem("admin"));
   res.status(200).redirect("login");

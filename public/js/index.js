@@ -14,7 +14,7 @@
 document.querySelector(".admin_icon").addEventListener("click", (e) => {
   document.querySelector(".list_item").classList.toggle("none");
   e.stopImmediatePropagation();
-  console.log("ddddd");
+  // console.log("ddddd");
 });
 document.querySelector(".list_item").addEventListener("click", (e) => {
   e.stopPropagation();
@@ -48,7 +48,7 @@ function clock() {
 setInterval(clock, 1000);
 const imgInp = document.querySelector("#imgInp");
 const blah = document.querySelector("#blah");
-blah.style.dislay="none"
+blah.style.dislay = "none";
 imgInp.onchange = (evt) => {
   const [file] = imgInp.files;
   if (file) {
@@ -57,3 +57,28 @@ imgInp.onchange = (evt) => {
     blah.src = URL.createObjectURL(file);
   }
 };
+
+
+// $(document).ready(function() {
+//   $(".owl-carousel").owlCarousel({
+//     loop: true,
+//     items: 3,
+//     responsive: {
+//       0: {
+//         items: 1,
+//         mouseDrag: true,
+//         touchDrag: true,
+//       },
+//       800: {
+//         items: 2,
+//         mouseDrag: true,
+//         touchDrag: true,
+//       },
+//       1200: {
+//         items: 3,
+//         mouseDrag: true,
+//         touchDrag: true,
+//       },
+//     },
+//   });
+// });

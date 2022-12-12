@@ -8,7 +8,7 @@ var path = require("path"); //used for file path
 var fs = require("fs-extra");
 require("dotenv").config();
 const admin = express();
-console.log(localStorage.getItem("admin"));
+// console.log(localStorage.getItem("admin"));
 const port = 8080;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -36,7 +36,7 @@ const axios = require("axios");
 //   });
 
 app.use("/", routes);
-app.post("/dashboard/upload", function(req, res) {
+app.post("/upload-image", async (req, res) => {
   let sampleFile;
   let uploadPath;
 
@@ -49,7 +49,7 @@ app.post("/dashboard/upload", function(req, res) {
   uploadPath = __dirname + "/public/images/" + sampleFile.name;
 
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv(uploadPath, function(err) {
+  await sampleFile.mv(uploadPath, function (err) {
     if (err) return res.status(500).send(err);
 
     res.redirect(`/images/${sampleFile.name}`);

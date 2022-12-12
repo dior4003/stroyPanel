@@ -29,12 +29,7 @@
               >
                 С помощью наших сэндвичных панелей было построено и строятся до сих пор много сооружений, зданий и других объектов. 
 Завод Stroy Panel Uzbekistan находится в городе Ташкент, Узбекистан. &nbsp;<br />
-                {{!-- <br />Image from
-                <b>
-                  <a
-                    href="#"
-                    class="u-border-1 u-border-palette-1-base u-btn u-btn-rectangle u-button-link u-button-style u-none u-text-palette-1-dark-1 u-btn-1"
-                  >Freepik</a></b> --}}
+                
               </p>
               <a
                 href="#"
@@ -63,66 +58,18 @@
       *Лучшие и качественные товары от производителя!
     </p>
     <div class="u-expanded-width u-list u-list-1">
-      <div class="u-repeater u-repeater-1">
-        <div
-          class="u-align-center u-container-style u-list-item u-repeater-item u-white u-list-item-1"
-        >
-          <div
-            class="u-container-layout u-similar-container u-container-layout-1"
-          >
-            <div alt="" class="u-image u-image-circle u-image-1"></div>
-            <h4 class="u-text u-text-3">Design-Build</h4>
-          </div>
-        </div>
-        <div
-          class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white"
-        >
-          <div
-            class="u-container-layout u-similar-container u-container-layout-2"
-          >
-            <div alt="" class="u-image u-image-circle u-image-2" style="background-image: url(//images03.nicepage.com/c461c07a441a5d220e8feb1a/6b42a580ae8d57cbae739cc6/5da03891-cde7-5ff9-6ffe-2bdac41249d0.jpg?version=)"></div>
-            <h4 class="u-text u-text-4">Remodeling</h4>
-          </div>
-        </div>
-        <div
-          class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white"
-        >
-          <div
-            class="u-container-layout u-similar-container u-container-layout-3"
-          >
-            <div
-              alt=""
-              class="u-image u-image-circle u-image-3"
-              data-image-width="1350"
-              data-image-height="900"
-            ></div>
-            <h4 class="u-text u-text-5">City Spaces</h4>
-          </div>
-        </div>
-        <div
-          class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white"
-        >
-          <div
-            class="u-container-layout u-similar-container u-container-layout-4"
-          >
-            <div
-              alt=""
-              class="u-image u-image-circle u-image-4"
-              data-image-width="800"
-              data-image-height="773"
-            ></div>
-            <h4 class="u-text u-text-6">Civil Engineers</h4>
-          </div>
-        </div>
+      <div class="u-repeater u-repeater-1" style="
+              display: flex;
+              justify-content: center;
+              flex-direction: row;
+              flex-wrap: wrap;
+          ">
+        {{#each cards}}
+          {{>cardimage}}
+        {{/each}}
       </div>
     </div>
-    {{!-- <p class="u-text u-text-7">
-      Images from
-      <a
-        href="#"
-        class="u-border-1 u-border-white u-btn u-button-link u-button-style u-none u-text-body-alt-color u-btn-1"
-      >Freepik</a>
-    </p> --}}
+
     <a
       href="#"
       class="u-border-2 u-border-white u-btn u-btn-rectangle u-button-style u-btn-2"
@@ -211,7 +158,8 @@
     </div>
   </div>
 </section>
-<section
+{{>insta}}
+{{!-- <section
   class="u-align-center u-clearfix u-grey-5 u-section-5"
   id="carousel_04bb"
 >
@@ -425,7 +373,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <section
   class="u-align-center-lg u-align-center-xl u-align-left-md u-align-left-sm u-align-left-xs u-clearfix u-palette-5-dark-3 u-section-6"
   id="carousel_5667"
@@ -485,7 +433,7 @@
                   </h1>
                   <img
                     class="u-expanded-width u-image u-image-2"
-                    src="./images/er.jpg"
+                    src="./images/photo_2022-12-10_14-36-06.jpg"
                     data-image-width="900"
                     data-image-height="900"
                   />
@@ -801,7 +749,7 @@
                       >Name</label>
                       <input
                         type="text"
-                        placeholder="Enter your Name"
+                        placeholder="Введите ваше имя"
                         id="name-3b9a"
                         name="name"
                         class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-1"
@@ -813,14 +761,14 @@
                         for="email-3b9a"
                         class="u-form-control-hidden u-label"
                       >Email</label>
-                      <input
-                        type="email"
-                        placeholder="Enter a valid email address"
-                        id="email-3b9a"
-                        name="email"
-                        class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-2"
-                        required=""
-                      />
+                     
+                       <input 
+                       required="" 
+                       {{!-- placeholder="Введите действительный адрес телефона"  --}}
+                       id="phone" 
+                       name="phone" 
+                       type="tel" 
+                       class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-input-2">
                     </div>
                     <div class="u-form-group u-form-message">
                       <label
@@ -828,7 +776,7 @@
                         class="u-form-control-hidden u-label"
                       >Message</label>
                       <textarea
-                        placeholder="Enter your message"
+                        placeholder="Введите сообщение"
                         rows="4"
                         cols="50"
                         id="message-3b9a"
@@ -879,8 +827,9 @@
                 </h6>
                 <h2 class="u-text u-text-grey-70 u-text-2">Свяжитесь с нами</h2>
                 <p class="u-text u-text-grey-50 u-text-3">
-                  г.Ташкент. Сергилинский район. Ул. Чочтепа, Центр махалли<br />Mon – Fri: 9:00 am –
-                  8:00 pm,<br />Sat – Sun: 9:00 am – 10 pm<br />
+                  г.Ташкент. Сергилинский район. Ул. Чочтепа, Центр махалли<br />Наш контакт<br>
+                  <a href="tel:+99833 9194444">   +99833 9194444</a>
+                  <br />
                   <a
                     href="mailto:infostroypanel@gmail.com"
                     class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2"

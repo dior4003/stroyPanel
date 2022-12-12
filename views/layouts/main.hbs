@@ -5047,6 +5047,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="./css/intlTelInput.css">
     <link rel="stylesheet" href="./css/admin.css" />
     <link rel="stylesheet" href="./css/admind.css" />
     <link
@@ -5085,6 +5086,35 @@
 
     {{{body}}}
 
+
+
+  <script src="./js/intlTelInput.js"></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      allowDropdown: true,
+      // autoHideDialCode: false,
+      // autoPlaceholder: "off",
+      // dropdownContainer: document.body,
+      //excludeCountries: ["uz"],
+      // formatOnDisplay: false,
+      // geoIpLookup: function(callback) {
+      //   $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      //     var countryCode = (resp && resp.country) ? resp.country : "";
+      //     callback(countryCode);
+      //   });
+      // },
+      // hiddenInput: "full_number",
+       initialCountry: "uz",
+      //localizedCountries: { 'uz': 'Uzbekistan' },
+      // nationalMode: false,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+      // placeholderNumberType: "MOBILE",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "./js/utils.js",
+    });
+  </script>
     <script
       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
     ></script>

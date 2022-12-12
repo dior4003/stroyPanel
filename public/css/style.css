@@ -218,7 +218,7 @@
 .u-section-3 .u-image-2 {
   width: 164px;
   height: 164px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/ce5afd0f2a5f5048a72e94df/low-angle-building-city_23-2148814160.jpg");
+  background-image: url("https://thumb.tildacdn.com/tild3533-3630-4532-a434-623634396130/-/cover/460x340/center/center/-/format/webp/Product_4.jpg");
   background-position: 50% 50%;
   margin: 0 auto;
 }
@@ -233,7 +233,7 @@
 .u-section-3 .u-image-3 {
   width: 164px;
   height: 164px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/639ce4babdd0561e9d3e5481/rest.jpg?version=");
+  background-image: url("https://static.tildacdn.com/tild3430-6461-4836-b231-316563303364/montazh_postavka_kho.jpg");
   background-position: 0% 50%;
   margin: 0 auto;
 }
@@ -246,9 +246,8 @@
   padding: 30px;
 }
 .u-section-3 .u-image-4 {
-  width: 164px;
-  height: 164px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/6b42a580ae8d57cbae739cc6/5da03891-cde7-5ff9-6ffe-2bdac41249d0.jpg?version=");
+  width: 220px;
+  height: 220px;
   background-position: 50% 50%;
   margin: 0 auto;
 }
@@ -256,6 +255,8 @@
   text-transform: none;
   font-style: italic;
   margin: 32px 2px 0;
+  text-align: center;
+  width: 200px;
 }
 .u-section-3 .u-text-7 {
   width: 182px;
@@ -363,7 +364,7 @@
 .u-section-4 .u-image-1 {
   width: 300px;
   height: 300px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/647484340309514f96e39613/hhh.jpg?version=");
+  background-image: url("https://thumb.tildacdn.com/tild6466-3063-4439-b636-303534626237/-/cover/720x720/center/center/-/format/webp/about_3.jpg");
   background-position: 50% 50%;
   margin: 113px auto 0 344px;
 }
@@ -375,14 +376,14 @@
 .u-section-4 .u-image-2 {
   width: 300px;
   height: 300px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/a771cc15a3c85217a2032296/engineer-is-inspecting-his-work-building-construction-site_1150-6195.jpg");
+  background-image: url("https://thumb.tildacdn.com/tild6665-3036-4664-b239-396537313066/-/cover/720x720/center/center/-/format/webp/about_2.jpg");
   background-position: 50% 50%;
   margin: -223px auto 0 0;
 }
 .u-section-4 .u-image-3 {
   width: 526px;
   height: 526px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/c57f4ec3c5895ffeb77c0dd6/dddfg-min.jpg");
+  background-image: url("https://thumb.tildacdn.com/tild3463-3930-4361-b866-313335376231/-/cover/720x720/center/center/-/format/webp/about_1.jpg");
   background-position: 50% 50%;
   margin: -193px auto 0 158px;
 }
@@ -943,7 +944,7 @@
 }
 .u-section-6 .u-image-1 {
   min-height: 523px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/5459c5aff34052b190c2b150/dgr-min.jpg");
+  background-image: url("../images/photo_2022-12-10_14-36-08.jpg");
   background-position: 50% 50%;
 }
 .u-section-6 .u-container-layout-1 {
@@ -1131,7 +1132,8 @@
 .u-section-7 .u-image-1 {
   width: 703px;
   height: 703px;
-  background-image: url("//images03.nicepage.com/c461c07a441a5d220e8feb1a/00ebc5e956725ca49a9034ef/trdt-min.jpg");
+  background-size: cover;
+  background-image: url(../images/photo_2022-12-10_14-36-13.jpg);
   background-position: 50% 50%;
   margin: -160px auto 0;
 }
@@ -1845,4 +1847,124 @@
     margin-left: -190px;
     text-align: center;
   }
+}
+
+.card {
+  position: relative;
+  width: 360px;
+  min-height: 400px;
+  background: rgb(255, 255, 255);
+  box-shadow: 15px 15px 60px rgba(0, 0, 0, 0.01);
+  padding: 15px;
+  margin-top: 15px;
+  margin-left: 1.2%;
+  margin-right: 1.2%;
+  /* transform: translateX(40vw); */
+}
+.box {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+.owl-carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .top .userDetails {
+  display: flex;
+  align-items: center;
+}
+
+.card .top .userDetails .profile_img {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .top .userDetails h3 {
+  font-size: 16px;
+  color: #4d4d4d;
+  font-weight: 500;
+  line-height: 1em;
+}
+
+.card .top .userDetails h3 span {
+  font-size: 0.7em;
+}
+
+.imgBox {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  margin: 10px 0 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 230px;
+}
+
+.buttons img {
+  max-width: 24px;
+  max-height: 24px;
+  cursor: pointer;
+}
+
+.buttons .left img {
+  margin-right: 8px;
+}
+
+.likes {
+  font-weight: 500;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
+.message {
+  font-weight: 500;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #4d4d4d;
+}
+
+.message b {
+  color: #262626;
+}
+
+.settings:after {
+  content: "\2807";
+  font-size: 25px;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+.icon:hover {
+  opacity: 0.7;
 }
